@@ -219,7 +219,7 @@ if (contactForm) {
             CONVERSÃO
             =================================================
 
-            Futuramente podemos disparar aqui:
+            ÁREA RESERVADA PARA TAGS DE ANÁLISE DE CONVERSÕES
 
             - Google Ads
             - Google Analytics 4
@@ -229,8 +229,6 @@ if (contactForm) {
 
             gtag('event', 'generate_lead');
 
-            Não ativamos agora para evitar eventos
-            falsos antes da configuração definitiva.
         */
 
 
@@ -257,7 +255,7 @@ if (contactForm) {
 ========================================================= */
 
 const animatedElements = document.querySelectorAll(
-    ".benefit-card, .step, .about-content, .about-image, .contact-card"
+    ".benefit-card, .alert, .about-content, .about-image, .contact-card"
 );
 
 
@@ -300,7 +298,7 @@ if ("IntersectionObserver" in window) {
 
 
 /* =========================================================
-   HEADER - TRANSPARÊNCIA AO ROLAR
+   HEADER - TRANSPARÊNCIA NO TOPO
 ========================================================= */
 
 const header = document.querySelector(".header");
@@ -309,37 +307,11 @@ if (header) {
 
     const updateHeader = () => {
 
-        const scroll = window.scrollY;
-
-        /*
-            De 0 até 150px de scroll,
-            o header vai ficando mais transparente.
-        */
-
-        const progress = Math.min(scroll / 150, 1);
-
-        /*
-            Opacidade:
-            topo    = 95%
-            scroll  = 70%
-        */
-
-        const opacity = 0.95 - (progress * 0.25);
-
-        header.style.background =
-            `rgba(255, 255, 255, ${opacity})`;
-
-        /*
-            Blur também diminui suavemente.
-        */
-
-        const blur = 14 - (progress * 6);
-
-        header.style.backdropFilter =
-            `blur(${blur}px)`;
-
-        header.style.webkitBackdropFilter =
-            `blur(${blur}px)`;
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
 
     };
 
@@ -348,10 +320,9 @@ if (header) {
     window.addEventListener(
         "scroll",
         updateHeader,
-        {
-            passive: true
-        }
+        { passive: true }
     );
+
 }
 
 /* =========================================================
@@ -365,3 +336,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+/* =========================================================
+   ANIMAÇÃO DOS CARDS DE SOLUÇÕES
+========================================================= */
+
+const solutionCards = document.querySelectorAll(".solution-card");
+
+if (solutionCards.length) {
+
+    const solutionObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("in-view");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+    solutionCards.forEach((card) => {
+        solutionObserver.observe(card);
+    });
+
+}
