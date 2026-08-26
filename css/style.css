@@ -165,7 +165,7 @@ button {
 .nav a {
     position: relative;
 
-    color: var(--text);
+    color: var(--white);
     font-size: 0.95rem;
     font-weight: 500;
 
@@ -182,13 +182,13 @@ button {
     width: 0;
     height: 2px;
 
-    background: var(--primary);
+    background: var(--white);
 
     transition: width 0.25s ease;
 }
 
 .nav a:not(.nav-button):hover {
-    color: var(--primary);
+    color: var(--white);
 }
 
 .nav a:not(.nav-button):hover::after {
@@ -240,6 +240,13 @@ button {
 
 .header.scrolled .menu-toggle span {
     background: var(--primary-dark);
+}
+.header.scrolled .nav a {
+    color: var(--text);
+}
+
+.header.scrolled .nav a:not(.nav-button)::after {
+    background-color: var(--text);
 }
 
 
@@ -1924,6 +1931,10 @@ button {
         scroll-snap-align: center;
 
         scroll-snap-stop: always;
+    }
+
+    .nav a {
+        color: var(--text);
     }
 
 }
