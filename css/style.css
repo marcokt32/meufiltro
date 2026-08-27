@@ -68,7 +68,7 @@ button {
     --section-title: #0d5a9e;
 
     --white: #ffffff;
-    --light: #FFFFFFCC;
+    --light: #FFFFFFcc;
     --green: #25D366;
     --green-hover: #1da851;
     --background: #f7fbfd;
@@ -241,6 +241,7 @@ button {
 .header.scrolled .menu-toggle span {
     background: var(--primary-dark);
 }
+
 .header.scrolled .nav a {
     color: var(--text);
 }
@@ -255,33 +256,58 @@ button {
 ========================================================= */
 
 .hero {
-    padding: 5rem;
-
     position: relative;
     overflow: hidden;
 
-    min-height: 100vh;
+    height: 90vh;
+
+    padding: 5rem;
 
     background: #0D3B6E;
-
-    background-image: url("../assets/hero.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
+
+/* VÍDEO */
+
+.hero-video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+}
+
+/* ESCURECIMENTO DO VÍDEO */
 
 .hero-overlay {
     position: absolute;
+
     inset: 0;
 
     background:
-        linear-gradient(90deg,
-            rgba(13, 59, 110, 0.92) 0%,
-            rgba(13, 59, 110, 0.82) 35%,
-            rgba(13, 59, 110, 0.45) 65%,
-            rgba(13, 59, 110, 0.15) 100%);
+        linear-gradient(-90deg,
+            rgba(13, 59, 110, 1),
+            rgba(13, 59, 110, 0),
+            rgba(13, 59, 110, 1));
 
     z-index: 1;
+}
+
+/* CONTEÚDO */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    color: white;
 }
 
 /* =========================================================
@@ -390,7 +416,6 @@ button {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    max-width: 600px;
 }
 
 .hero-badge {
@@ -439,7 +464,7 @@ button {
 
     font-weight: 500;
 
-    font-size: 3.25rem;
+    font-size: 3rem;
 
     letter-spacing: -0.05em;
 
@@ -447,6 +472,8 @@ button {
 }
 
 .hero h1 strong {
+    margin-top: 1rem;
+
     display: block;
 
     color: transparent;
@@ -471,18 +498,37 @@ button {
     }
 }
 
-.hero p {
+/* CORPO DOS TEXTOS DAS SEÇÕES*/
+
+.hero p,
+.experience-header p,
+.reviews-header p,
+.resource-header p,
+.resource-content p,
+.benefits-header p {
     font-weight: 500;
 
     max-width: 36rem;
 
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
-    color: var(--light);
+    color: var(--white);
 
     font-size: 1rem;
 
     line-height: 1.625;
+
+    text-align: left;
+}
+
+/* TEXTOS COM FUNDO BRANCO*/
+
+.experience-header p,
+.reviews-header p,
+.resource-header p,
+.resource-content p,
+.benefits-header p {
+    color: var(--text);
 }
 
 .hero-buttons {
@@ -521,6 +567,324 @@ button {
     50% {
         transform: translateY(-10px);
     }
+}
+
+/* =========================
+    SEÇÃO EYEBROW
+======================*/
+
+.section-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    color: #F47C20;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.eyebrow-line {
+    width: 40px;
+    height: 2px;
+    background: #F47C20;
+}
+
+
+/* =========================
+   HEADER DAS SEÇÕES
+========================= */
+
+.experience-header,
+.resource-header,
+.reviews-header,
+.benefits-header {
+    text-align: center;
+    margin: 0 auto 1rem;
+}
+
+
+/* =========================
+   STATUS DA EMPRESA
+========================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 90px;
+}
+
+.stat-card {
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    min-height: 150px;
+
+    border: 1px solid rgba(13, 90, 158, 0.08);
+
+    box-shadow:
+        0 8px 25px rgba(13, 90, 158, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(13, 90, 158, 0.14);
+}
+
+.stat-card strong {
+    color: #0D5A9E;
+
+    font-size: 40px;
+    line-height: 1;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+.stat-card span {
+    color: #4A4A6A;
+
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.stat-card .stat-star {
+    color: #F47C20;
+
+    font-size: 30px;
+
+    margin-left: 3px;
+}
+
+/* =========================
+   CARROSSEL
+========================= */
+
+.reviews-carousel {
+    padding: 1rem 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.reviews-track {
+    display: flex;
+
+    gap: 20px;
+
+    width: max-content;
+
+    animation:
+        reviews-marquee 35s linear infinite;
+}
+
+.reviews-carousel:hover .reviews-track {
+    animation-play-state: paused;
+}
+
+@keyframes reviews-marquee {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.review-card {
+    width: 340px;
+
+    min-height: 260px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 26px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow:
+        0 5px 18px rgba(13, 90, 158, 0.10);
+
+    border: 1px solid rgba(13, 90, 158, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(13, 90, 158, 0.18);
+}
+
+
+/* =========================
+   ESTRELAS
+========================= */
+
+.stars {
+    color: #F47C20;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.review-text {
+    color: #4A4A6A;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    font-style: italic;
+
+    margin-bottom: 25px;
+
+    flex: 1;
+}
+
+
+/* =========================
+   CLIENTE
+========================= */
+
+.review-footer {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(135deg,
+            #1A73C1,
+            #0D5A9E);
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+.review-author {
+    color: #0D5A9E;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.review-source {
+    color: #777;
+
+    font-size: 11px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.reviews-button-wrapper {
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+.reviews-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    background: #F47C20;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
+}
+
+.reviews-button:hover {
+    background: #e06a10;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(244, 124, 32, 0.25);
 }
 
 /* =========================================================
@@ -646,22 +1010,17 @@ button {
    SEÇÕES
 ========================================================= */
 
-.section {
-    scroll-margin-top: 50px;
-    padding: 110px 0;
+section {
+    background-image: linear-gradient(115deg,
+            var(--primary) 0%,
+            var(--light) 10%,
+            var(--light) 80%,
+            var(--secondary) 100%);
+    scroll-margin-top: 1.5rem;
+    padding-top: 1.5rem;
 }
 
-.section-header {
-    max-width: 700px;
-
-    margin: 0 auto 60px;
-
-    text-align: left;
-}
-
-.section-header p,
-.how-content p,
-.solutions-header p {
+.section-header p {
     color: var(--text);
     font-size: 1.05rem;
     font-weight: 500;
@@ -673,50 +1032,29 @@ button {
 ========================*/
 
 .section-header h2,
-.how-content h2,
-.about-content h2,
-.solutions-header h2 {
+.experience-header h2,
+.reviews-header h2,
+.resource-header h2,
+.benefits-header h2 {
     margin-bottom: 18px;
 
     color: var(--section-title);
 
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: 2.2rem;
     font-weight: bold;
     line-height: 1.15;
     letter-spacing: -0.03em;
+
+    text-align: left;
 }
 
+/* STRONGS */
 
-/* =========================================================
-   COMO FUNCIONA
-========================================================= */
+.resource-header h2 strong,
+.benefits-header h2 strong {
+    display: block;
 
-.how-it-works {
-    background: var(--background);
-}
-
-.how-container {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-
-    gap: 80px;
-}
-
-.how-image {
-    position: relative;
-    margin-bottom: 1rem;
-}
-
-.how-image img {
-    border-radius: 10px;
-
-    width: 100%;
-    max-width: 520px;
-
-    margin: auto;
+    color: #F47C20;
 }
 
 /* =========================================================
@@ -880,255 +1218,48 @@ button {
     line-height: 1.625;
 }
 
-/* =========================================================
-   SOLUÇÕES
-========================================================= */
+/* =========================================
+   BENEFÍCIOS / PROBLEMAS
+========================================= */
 
-.solutions {
-    padding: 50px 0;
-    background: #eef2f5;
-}
-
-
-/* Container */
-
-.solutions .container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-
-/* Cabeçalho */
-
-.solutions-header {
-    max-width: 768px;
-    margin: 0 auto 56px;
-    text-align: left;
-}
-
-
-/* Grid */
-
-.solutions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-
-/* Card */
-
-.solution-card {
-    display: flex;
-    flex-direction: column;
-
-    overflow: hidden;
-
+.benefits-section {
+    padding: 100px 20px;
     background: #ffffff;
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.08);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease,
-        box-shadow 0.3s ease;
-
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-.solution-card.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================================================
-   DELAY DOS CARDS
-========================================================= */
-
-.solution-card:nth-child(1) {
-    transition-delay: 0.05s;
-}
-
-.solution-card:nth-child(2) {
-    transition-delay: 0.15s;
-}
-
-.solution-card:nth-child(3) {
-    transition-delay: 0.25s;
-}
-
-.solution-card:nth-child(4) {
-    transition-delay: 0.35s;
-}
-
-.solution-card:nth-child(5) {
-    transition-delay: 0.45s;
-}
-
-.solution-card:nth-child(6) {
-    transition-delay: 0.55s;
 }
 
 
-/* Hover */
+/* =========================================
+   CABEÇALHO
+========================================= */
 
-.solution-card:hover {
-    transform: translateY(-4px);
+.section-label {
+    display: inline-block;
 
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.12);
+    margin-bottom: 15px;
+
+    color: #F47C20;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
 }
 
 
-/* Linha superior */
+/* =========================================
+   CARD INVERTIDO
+========================================= */
 
-.solution-card-line {
-    height: 4px;
-
-    flex-shrink: 0;
-
-    background: linear-gradient(90deg,
-            #F47C20,
-            #1A73C1);
+.benefit-card-reverse .benefit-image {
+    order: 2;
 }
 
-
-/* Conteúdo */
-
-.solution-card-content {
-    flex: 1;
-
-    display: flex;
-    flex-direction: column;
-
-    padding: 24px;
+.benefit-card-reverse .benefit-content {
+    order: 1;
 }
 
-
-/* Ícone */
-
-.solution-icon {
-    width: 56px;
-    height: 56px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 16px;
-
-    border-radius: 16px;
-
-    background: linear-gradient(135deg,
-            #E8F4FD,
-            #D0E7F8);
-
-    transition:
-        background 0.3s ease;
-}
-
-.solution-icon svg {
-    width: 28px;
-    height: 28px;
-
-    color: #1A73C1;
-
-    transition:
-        color 0.3s ease;
-}
-
-
-/* Hover do ícone */
-
-.solution-card:hover .solution-icon {
-    background: linear-gradient(135deg,
-            #1A73C1,
-            #0D5A9E);
-}
-
-.solution-card:hover .solution-icon svg {
-    color: #ffffff;
-}
-
-
-/* Título */
-
-.solution-card h3 {
-    margin: 0 0 12px;
-
-    font-family: "Display", sans-serif;
-
-    font-size: 1.25rem;
-    font-weight: 700;
-
-    line-height: 1.3;
-
-    color: #0D5A9E;
-}
-
-
-/* Descrição */
-
-.solution-card p {
-    flex: 1;
-
-    margin: 0 0 20px;
-
-    color: #4A4A6A;
-
-    font-size: 0.875rem;
-
-    line-height: 1.625;
-}
-
-
-/* Botão */
-
-.solution-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    align-self: flex-start;
-
-    gap: 8px;
-
-    padding: 10px 20px;
-
-    border: 2px solid #1A73C1;
-    border-radius: 999px;
-
-    color: #1A73C1;
-
-    font-weight: 600;
-
-    text-decoration: none;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.solution-button svg {
-    width: 16px;
-    height: 16px;
-}
-
-
-/* Hover botão */
-
-.solution-button:hover {
-    background: #1A73C1;
-    color: #ffffff;
-
-    transform: translateX(2px);
+.benefit-card-reverse .benefit-number {
+    left: auto;
+    right: -22px;
 }
 
 
@@ -1138,16 +1269,6 @@ button {
 
 .about {
     background: var(--white);
-}
-
-.about-container {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-
-    gap: 80px;
 }
 
 .about-content {
@@ -1171,6 +1292,365 @@ button {
     margin: auto;
 
     border-radius: var(--radius);
+}
+
+/* =========================
+   PROBLEMA + SOLUÇÃO
+========================= */
+
+.resource {
+    padding: 1rem;
+    background: #fff;
+}
+
+.resource-main {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    margin-bottom: 80px;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.problem-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    background: #FFF1E8;
+
+    color: #F47C20;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.resource-header h3 {
+    color: #0D5A9E;
+
+    font-size: 34px;
+
+    line-height: 1.2;
+}
+
+.resource-header h3 span {
+    color: #F47C20;
+}
+
+
+/* =========================
+   LISTA DE PROBLEMAS
+========================= */
+
+.problem-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.problem-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.problem-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FFF1E8;
+
+    color: #F47C20;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+.problem-item strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #0D5A9E;
+
+    font-size: 15px;
+}
+
+.problem-item span {
+    color: #4A4A6A;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.water-solution-image {
+    position: relative;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 50px rgba(13, 90, 158, 0.18);
+}
+
+.water-solution-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(180deg,
+            transparent 55%,
+            rgba(13, 59, 110, 0.45));
+
+    pointer-events: none;
+}
+
+.water-solution-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.solution-badge {
+    position: relative;
+    margin-top: 1rem;
+
+    left: 0px;
+    bottom: 0px;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 18px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.solution-badge-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #E8F4FD;
+
+    color: #1A73C1;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+.solution-badge strong {
+    display: block;
+
+    color: #0D5A9E;
+
+    font-size: 14px;
+}
+
+.solution-badge span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #4A4A6A;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   BENEFÍCIOS
+========================= */
+
+.water-benefits {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 1px;
+
+    overflow: hidden;
+
+    border: 1px solid #E4EDF5;
+
+    border-radius: 22px;
+
+    background: #E4EDF5;
+}
+
+.water-benefit {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    transition:
+        background 0.3s ease;
+}
+
+.water-benefit:hover {
+    background: #F8FBFE;
+}
+
+.water-benefit h3 {
+    margin-bottom: 8px;
+
+    color: #0D5A9E;
+
+    font-size: 18px;
+}
+
+.water-benefit p {
+    color: #4A4A6A;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.resource-cta {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-top: 50px;
+
+    padding: 30px 35px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(100deg,
+            #0D5A9E,
+            #1A73C1);
+}
+
+.resource-cta>div span {
+    color: #BFDDF3;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.resource-cta h3 {
+    margin-top: 5px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+.resource-cta a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    padding: 14px 23px;
+
+    border-radius: 50px;
+
+    background: #F47C20;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.resource-cta a:hover {
+    background: #e06a10;
+
+    transform: translateY(-2px);
 }
 
 
@@ -1628,6 +2108,116 @@ button {
     transform: translateY(0);
 }
 
+/* CARROSSEL ANTES X DEPOIS */
+
+/* =========================
+   DESKTOP
+========================= */
+
+.before-after-carousel {
+    position: relative;
+}
+
+.comparison-slide {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.comparison-card {
+    flex: 1;
+    display: block;
+}
+
+.comparison-card img {
+    border-radius: 1rem;
+}
+
+
+/* Botões escondidos no desktop */
+
+.carousel-btn {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .carousel-track {
+        display: block;
+    }
+
+    .comparison-card {
+        display: none;
+        width: 100%;
+    }
+
+    .comparison-card.active {
+        display: block;
+        animation: comparisonFade .4s ease;
+    }
+
+    .carousel-btn {
+        display: flex;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 46px;
+        height: 46px;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 50%;
+
+        background: #0D5A9E;
+        color: #fff;
+
+        cursor: pointer;
+
+        z-index: 10;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    }
+
+    .prev {
+        left: -15px;
+    }
+
+    .next {
+        right: -15px;
+    }
+
+}
+
+@keyframes comparisonFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
 
 /* =========================================================
    RESPONSIVIDADE
@@ -1652,9 +2242,43 @@ button {
 
 
 @media (max-width: 992px) {
+    .benefits-section {
+        padding: 70px 20px;
+    }
 
-    .solutions-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .benefit-card,
+    .benefit-card-reverse {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        margin-bottom: 80px;
+    }
+
+    .benefit-card-reverse .benefit-image {
+        order: 1;
+    }
+
+    .benefit-card-reverse .benefit-content {
+        order: 2;
+    }
+
+    .benefit-image {
+        height: 350px;
+    }
+
+    .benefit-number,
+    .benefit-card-reverse .benefit-number {
+        left: -10px;
+        right: auto;
+        top: -15px;
+
+        width: 58px;
+        height: 58px;
+    }
+
+    .benefit-content {
+        max-width: none;
     }
 
     .nav {
@@ -1782,10 +2406,6 @@ button {
         width: min(var(--container), calc(100% - 30px));
     }
 
-    .section {
-        padding: 50px 0;
-    }
-
     .hero h1 {
         font-size: 2.55rem;
     }
@@ -1802,10 +2422,6 @@ button {
 
     .hero-buttons .button {
         width: 100%;
-    }
-
-    .section-header {
-        margin-bottom: 40px;
     }
 
     .how-container,
@@ -1937,4 +2553,393 @@ button {
         color: var(--text);
     }
 
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resource-main {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        margin-bottom: 50px;
+    }
+
+    .resource-content h3 {
+        font-size: 2rem;
+    }
+
+    .water-solution-image {
+        height: 380px;
+    }
+
+    .water-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px;
+    }
+
+    .resource-cta a {
+        width: 100%;
+    }
+
+    .benefit-image {
+        height: 280px;
+    }
+
+    .benefit-content h3 {
+        font-size: 30px;
+    }
+
+    .resource-header h3 {
+        text-align: left;
+    }
+
+    .solution-badge {
+        position: absolute;
+        margin-top: none;
+    }
+}
+
+/* =========================
+   BENEFITS
+========================= */
+
+.benefits-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.benefits-header {
+    max-width: 700px;
+    margin-bottom: 45px;
+}
+
+.benefits-header h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    color: #0D5A9E;
+    margin-bottom: 15px;
+}
+
+.benefits-header h2 strong {
+    color: #F47C20;
+}
+
+
+/* =========================
+   CARDS DESKTOP
+========================= */
+
+.benefits-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.benefit-card {
+    display: grid;
+    grid-template-columns: 42% 58%;
+
+    min-height: 300px;
+
+    background: #fff;
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(13, 90, 158, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(13, 90, 158, 0.16);
+}
+
+
+/* CARD INVERTIDO */
+
+.benefit-card-reverse {
+    grid-template-columns: 58% 42%;
+}
+
+.benefit-card-reverse .benefit-image {
+    order: 2;
+}
+
+.benefit-card-reverse .benefit-content {
+    order: 1;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.benefit-image {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.benefit-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.benefit-card:hover .benefit-image img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   NÚMERO
+========================= */
+
+.benefit-number {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 2;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #F47C20;
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.benefit-content {
+    padding: 30px 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.benefit-tag {
+    color: #F47C20;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.benefit-content h3 {
+    color: #0D5A9E;
+
+    font-size: 27px;
+    line-height: 1.15;
+
+    margin-bottom: 12px;
+}
+
+.benefit-content p {
+    color: #4A4A6A;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    margin-bottom: 8px;
+}
+
+.benefit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    margin-top: 8px;
+
+    color: #1A73C1;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: gap 0.3s ease;
+}
+
+.benefit-link:hover {
+    gap: 13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .benefits {
+        overflow: hidden;
+    }
+
+    .benefits-header {
+        margin-bottom: 30px;
+    }
+
+    .benefits-header h2 {
+        font-size: 32px;
+    }
+
+
+    /* =========================
+       CARROSSEL
+    ========================= */
+
+    .benefits-carousel {
+
+        display: flex;
+        flex-direction: row;
+
+        gap: 16px;
+
+        width: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        scrollbar-width: none;
+
+        padding-bottom: 15px;
+    }
+
+    .benefits-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /* =========================
+       CARD
+    ========================= */
+
+    .benefit-card {
+
+        flex: 0 0 85vw;
+
+        width: 85vw;
+
+        display: flex;
+        flex-direction: column;
+
+        min-height: 0;
+
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+
+        border-radius: 18px;
+    }
+
+
+    /* Remove inversão no mobile */
+
+    .benefit-card-reverse {
+        flex-direction: column;
+    }
+
+    .benefit-card-reverse .benefit-image {
+        order: initial;
+    }
+
+    .benefit-card-reverse .benefit-content {
+        order: initial;
+    }
+
+
+    /* =========================
+       IMAGEM
+    ========================= */
+
+    .benefit-image {
+        height: 190px;
+        min-height: 190px;
+    }
+
+
+    /* =========================
+       CONTEÚDO
+    ========================= */
+
+    .benefit-content {
+        padding: 20px;
+    }
+
+    .benefit-tag {
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+
+    .benefit-content h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .benefit-content p {
+        font-size: 13px;
+        line-height: 1.45;
+
+        margin-bottom: 7px;
+    }
+
+    .benefit-link {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+
+    /* =========================
+       NÚMERO
+    ========================= */
+
+    .benefit-number {
+        width: 42px;
+        height: 42px;
+
+        top: 12px;
+        left: 12px;
+
+        font-size: 14px;
+    }
 }

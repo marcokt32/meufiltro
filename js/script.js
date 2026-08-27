@@ -371,3 +371,188 @@ if (solutionCards.length) {
     });
 
 }
+
+/* CARROSSEL ANTES X DEPOIS */
+
+const cards = document.querySelectorAll(".comparison-card");
+
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let current = 0;
+
+function showCard(index) {
+
+    cards.forEach(card => {
+        card.classList.remove("active");
+    });
+
+    cards[index].classList.add("active");
+}
+
+function updateCarouselMode() {
+
+    if (window.innerWidth <= 768) {
+
+        // Mobile: mostra apenas o card atual
+        showCard(current);
+
+    } else {
+
+        // Desktop: mostra todos
+        cards.forEach(card => {
+            card.classList.remove("active");
+        });
+
+    }
+}
+
+nextBtn.addEventListener("click", () => {
+
+    current++;
+
+    if (current >= cards.length) {
+        current = 0;
+    }
+
+    showCard(current);
+
+});
+
+prevBtn.addEventListener("click", () => {
+
+    current--;
+
+    if (current < 0) {
+        current = cards.length - 1;
+    }
+
+    showCard(current);
+
+});
+
+updateCarouselMode();
+
+window.addEventListener("resize", updateCarouselMode);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const carousel = document.querySelector(".benefits-carousel");
+    const cards = document.querySelectorAll(".benefit-card");
+
+    if (!carousel || !cards.length) return;
+
+    let currentIndex = 0;
+
+    function isMobile() {
+        return window.innerWidth <= 700;
+    }
+
+    function goToCard(index) {
+
+        if (!isMobile()) return;
+
+        currentIndex = Math.max(
+            0,
+            Math.min(index, cards.length - 1)
+        );
+
+        const card = cards[currentIndex];
+
+        carousel.scrollTo({
+            left: card.offsetLeft - carousel.offsetLeft,
+            behavior: "smooth"
+        });
+    }
+
+
+    /* =========================
+       SWIPE / ARRASTE
+    ========================= */
+
+    let startX = 0;
+    let isDragging = false;
+
+    carousel.addEventListener("touchstart", (event) => {
+
+        if (!isMobile()) return;
+
+        startX = event.touches[0].clientX;
+        isDragging = true;
+
+    }, { passive: true });
+
+
+    carousel.addEventListener("touchend", (event) => {
+
+        if (!isMobile() || !isDragging) return;
+
+        const endX = event.changedTouches[0].clientX;
+        const difference = startX - endX;
+
+        const threshold = 50;
+
+        if (Math.abs(difference) > threshold) {
+
+            if (difference > 0) {
+                // deslizou para esquerda
+                goToCard(currentIndex + 1);
+            } else {
+                // deslizou para direita
+                goToCard(currentIndex - 1);
+            }
+
+        }
+
+        isDragging = false;
+
+    });
+
+
+    /* =========================
+       ATUALIZA CARD ATUAL
+       AO ROLAR MANUALMENTE
+    ========================= */
+
+    carousel.addEventListener("scroll", () => {
+
+        if (!isMobile()) return;
+
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        cards.forEach((card, index) => {
+
+            const distance = Math.abs(
+                card.offsetLeft - carousel.scrollLeft
+            );
+
+            if (distance < closestDistance) {
+
+                closestDistance = distance;
+                closestIndex = index;
+
+            }
+
+        });
+
+        currentIndex = closestIndex;
+
+    });
+
+
+    /* =========================
+       RESIZE
+    ========================= */
+
+    window.addEventListener("resize", () => {
+
+        if (!isMobile()) {
+            currentIndex = 0;
+            carousel.scrollLeft = 0;
+        }
+
+    });
+
+});
