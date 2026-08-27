@@ -1011,9 +1011,9 @@ button {
 ========================================================= */
 
 section {
-    background-image: linear-gradient(115deg,
+    background-image: linear-gradient(180deg,
             var(--primary) 0%,
-            var(--light) 10%,
+            var(--light) 3%,
             var(--light) 80%,
             var(--secondary) 100%);
     scroll-margin-top: 1.5rem;
@@ -1052,8 +1052,6 @@ section {
 
 .resource-header h2 strong,
 .benefits-header h2 strong {
-    display: block;
-
     color: #F47C20;
 }
 
@@ -1346,6 +1344,8 @@ section {
     font-size: 34px;
 
     line-height: 1.2;
+
+    margin-top: 1rem;
 }
 
 .resource-header h3 span {
@@ -1582,24 +1582,23 @@ section {
 ========================= */
 
 .resource-cta {
+    margin-top: 1rem;
+
     display: flex;
+    flex-direction: column;
 
     align-items: center;
 
     justify-content: space-between;
-
-    gap: 30px;
-
-    margin-top: 50px;
 
     padding: 30px 35px;
 
     border-radius: 20px;
 
     background:
-        linear-gradient(100deg,
-            #0D5A9E,
-            #1A73C1);
+        linear-gradient(135deg,
+            var(--primary-light),
+            var(--primary));
 }
 
 .resource-cta>div span {
@@ -1621,6 +1620,8 @@ section {
 }
 
 .resource-cta a {
+
+    margin-top: 1rem;
     display: inline-flex;
 
     align-items: center;
@@ -1630,7 +1631,7 @@ section {
 
     flex-shrink: 0;
 
-    padding: 14px 23px;
+    padding: .5rem 1rem;
 
     border-radius: 50px;
 
@@ -2269,12 +2270,7 @@ section {
 
     .benefit-number,
     .benefit-card-reverse .benefit-number {
-        left: -10px;
         right: auto;
-        top: -15px;
-
-        width: 58px;
-        height: 58px;
     }
 
     .benefit-content {
@@ -2926,20 +2922,5 @@ section {
     .benefit-link {
         font-size: 13px;
         margin-top: 8px;
-    }
-
-
-    /* =========================
-       NÚMERO
-    ========================= */
-
-    .benefit-number {
-        width: 42px;
-        height: 42px;
-
-        top: 12px;
-        left: 12px;
-
-        font-size: 14px;
     }
 }
