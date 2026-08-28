@@ -1,0 +1,281 @@
+                <div class="reviews-carousel">
+
+                    <div class="reviews-track">
+
+
+                        <!-- REVIEW 1 -->
+
+                        <article class="review-card">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <p class="review-text">
+                                "Eu tinha um problema de ferrugem na minha água
+                                e a MEU FILTRO resolveu tudo. A melhor aquisição
+                                que fiz em 2022. Estou muito satisfeito!"
+                            </p>
+
+                            <div class="review-footer">
+
+                                <div class="review-avatar">
+                                    W
+                                </div>
+
+                                <div>
+                                    <div class="review-author">
+                                        Wallacy Oliveira
+                                    </div>
+
+                                    <div class="review-source">
+                                        Avaliação no Google
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- REVIEW 2 -->
+
+                        <article class="review-card">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <p class="review-text">
+                                "Ótimo atendimento, consegui esclarecer todas
+                                as dúvidas e o produto foi ajustado de acordo
+                                com a minha necessidade. Ótimo produto e suporte!"
+                            </p>
+
+                            <div class="review-footer">
+
+                                <div class="review-avatar">
+                                    M
+                                </div>
+
+                                <div>
+                                    <div class="review-author">
+                                        Marcio Paschuini
+                                    </div>
+
+                                    <div class="review-source">
+                                        Avaliação no Google
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- REVIEW 3 -->
+
+                        <article class="review-card">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <p class="review-text">
+                                "Instalei o filtro porque minha água era
+                                ferruginosa. Fui muito bem atendida e minha
+                                água está ótima! Super recomendo!"
+                            </p>
+
+                            <div class="review-footer">
+
+                                <div class="review-avatar">
+                                    V
+                                </div>
+
+                                <div>
+                                    <div class="review-author">
+                                        Viviane de Freitas
+                                    </div>
+
+                                    <div class="review-source">
+                                        Avaliação no Google
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- REVIEW 4 -->
+
+                        <article class="review-card">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <p class="review-text">
+                                "Ótimo atendimento. Fiquei muito satisfeito
+                                com o produto, com a orientação técnica e
+                                com o atendimento pós-venda."
+                            </p>
+
+                            <div class="review-footer">
+
+                                <div class="review-avatar">
+                                    G
+                                </div>
+
+                                <div>
+                                    <div class="review-author">
+                                        Gilson Menezes
+                                    </div>
+
+                                    <div class="review-source">
+                                        Avaliação no Google
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- DUPLICAÇÃO -->
+
+                        <article class="review-card">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <p class="review-text">
+                                "Eu tinha um problema de ferrugem na minha água
+                                e a MEU FILTRO resolveu tudo. A melhor aquisição
+                                que fiz em 2022. Estou muito satisfeito!"
+                            </p>
+
+                            <div class="review-footer">
+
+                                <div class="review-avatar">
+                                    W
+                                </div>
+
+                                <div>
+                                    <div class="review-author">
+                                        Wallacy Oliveira
+                                    </div>
+
+                                    <div class="review-source">
+                                        Avaliação no Google
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="review-card">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <p class="review-text">
+                                "Ótimo atendimento, consegui esclarecer todas
+                                as dúvidas e o produto foi ajustado de acordo
+                                com a minha necessidade. Ótimo produto e suporte!"
+                            </p>
+
+                            <div class="review-footer">
+
+                                <div class="review-avatar">
+                                    M
+                                </div>
+
+                                <div>
+                                    <div class="review-author">
+                                        Marcio Paschuini
+                                    </div>
+
+                                    <div class="review-source">
+                                        Avaliação no Google
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="review-card">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <p class="review-text">
+                                "Instalei o filtro porque minha água era
+                                ferruginosa. Fui muito bem atendida e minha
+                                água está ótima! Super recomendo!"
+                            </p>
+
+                            <div class="review-footer">
+
+                                <div class="review-avatar">
+                                    V
+                                </div>
+
+                                <div>
+                                    <div class="review-author">
+                                        Viviane de Freitas
+                                    </div>
+
+                                    <div class="review-source">
+                                        Avaliação no Google
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="review-card">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <p class="review-text">
+                                "Ótimo atendimento. Fiquei muito satisfeito
+                                com o produto, com a orientação técnica e
+                                com o atendimento pós-venda."
+                            </p>
+
+                            <div class="review-footer">
+
+                                <div class="review-avatar">
+                                    G
+                                </div>
+
+                                <div>
+                                    <div class="review-author">
+                                        Gilson Menezes
+                                    </div>
+
+                                    <div class="review-source">
+                                        Avaliação no Google
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>

@@ -555,4 +555,134 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    /*carrossel hero */
+
+    const slides = document.querySelectorAll(".hero-slide");
+    const nextBtn = document.querySelector(".hero-next");
+    const prevBtn = document.querySelector(".hero-prev");
+    const dots = document.querySelectorAll(".hero-dot");
+
+    let current = 0;
+
+    function showSlide(index) {
+
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+        });
+
+        dots.forEach(dot => {
+            dot.classList.remove("active");
+        });
+
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+    }
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const hero = document.querySelector(".hero");
+
+    hero.addEventListener("touchstart", (e) => {
+
+        touchStartX = e.changedTouches[0].screenX;
+
+    }, { passive: true });
+
+
+    hero.addEventListener("touchend", (e) => {
+
+        touchEndX = e.changedTouches[0].screenX;
+
+        handleSwipe();
+
+    }, { passive: true });
+
+
+    function handleSwipe() {
+
+        const difference = touchStartX - touchEndX;
+
+        // Ignora movimentos muito pequenos
+        if (Math.abs(difference) < 50) {
+            return;
+        }
+
+        // Arrastou para a esquerda → próximo
+        if (difference > 0) {
+
+            current++;
+
+            if (current >= slides.length) {
+                current = 0;
+            }
+
+        }
+
+        // Arrastou para a direita → anterior
+        else {
+
+            current--;
+
+            if (current < 0) {
+                current = slides.length - 1;
+            }
+
+        }
+
+        showSlide(current);
+    }
+
+    nextBtn.addEventListener("click", () => {
+
+        console.log("next");
+
+        current++;
+
+        if (current >= slides.length) {
+            current = 0;
+        }
+
+        showSlide(current);
+    });
+
+    prevBtn.addEventListener("click", () => {
+
+        current--;
+
+        if (current < 0) {
+            current = slides.length - 1;
+        }
+
+        showSlide(current);
+    });
+
+    setInterval(() => {
+
+        current++;
+
+        if (current >= slides.length) {
+            current = 0;
+        }
+
+        showSlide(current);
+
+    }, 6000);
+
+    nextBtn.addEventListener("click", () => {
+        console.log("next");
+    });
+
+    dots.forEach((dot, index) => {
+
+        dot.addEventListener("click", () => {
+
+            current = index;
+
+            showSlide(current);
+
+        });
+
+    });
+
 });

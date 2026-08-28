@@ -67,48 +67,106 @@
 
         <!-- HERO -->
 
-        <section class="hero" id="inicio">
+        <section class="hero">
 
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="assets/hero/hero-video.mp4" type="video/mp4">
-            </video>
+            <div class="hero-slider">
 
-            <div class="hero-light"></div>
-            <div class="hero-overlay"></div>
+                <!-- Slide 1 -->
+                <article class="hero-slide active">
 
-            <div class="container hero-container">
+                    <video class="hero-media" autoplay muted loop playsinline>
+                        <source src="assets/hero/hero-video.mp4" type="video/mp4">
+                    </video>
 
-                <div class="hero-content">
+                    <div class="hero-overlay"></div>
 
-                    <span class="hero-badge">
-                        +15 anos de excelência
-                    </span>
+                    <div class="container hero-container">
 
-                    <h1>
-                        Sua água tem cheiro de ferro?
-                        <br> Cor amarelada? Mancha sua roupa?
-                        <strong>Vamos resolver o seu problema</strong>
-                    </h1>
+                        <div class="hero-content">
 
-                    <p>
-                        Identificamos a causa do contaminação e apresentamos soluções personalizadas para cada
-                        necessidade.
-                        Atendemos todo o Brasil.
-                    </p>
+                            <h1>
+                                Água avermelhada?
+                                <strong>Nós resolvemos.</strong>
+                            </h1>
 
-                    <div class="hero-buttons">
+                            <div class="hero-buttons">
+                                <a href="#" class="button button-primary">
+                                    Solicitar avaliação
+                                </a>
+                            </div>
 
-                        <a href="#contato" class="button button-primary">
-                            Quero saber mais
-                        </a>
-
-                        <a href="#como-funciona" class="button button-secondary">
-                            Ver Soluções
-                        </a>
+                        </div>
 
                     </div>
 
-                </div>
+                </article>
+
+                <!-- Slide 2 -->
+                <article class="hero-slide">
+
+                    <img src="assets/agua-ferrugem.jpeg" class="hero-media" alt="">
+
+                    <div class="hero-overlay"></div>
+
+                    <div class="container hero-container">
+
+                        <div class="hero-content">
+
+                            <h1>
+                                Ferro na água?
+                                <strong>Elimine o problema.</strong>
+                            </h1>
+
+                            <div class="hero-buttons">
+                                <a href="#" class="button button-primary">
+                                    Solicitar avaliação
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Slide 3 -->
+                <article class="hero-slide">
+
+                    <img src="assets/familia.png" class="hero-media" alt="">
+
+                    <div class="hero-overlay"></div>
+
+                    <div class="container hero-container">
+
+                        <div class="hero-content">
+
+                            <h1>
+                                Sua família merece
+                                <strong>água de qualidade.</strong>
+                            </h1>
+
+                            <div class="hero-buttons">
+                                <a href="#" class="button button-primary">
+                                    Solicitar avaliação
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <button class="hero-prev">❮</button>
+            <button class="hero-next">❯</button>
+
+            <div class="hero-dots">
+
+                <button type="button" class="hero-dot active" data-slide="0"></button>
+                <button type="button" class="hero-dot" data-slide="1"></button>
+                <button type="button" class="hero-dot" data-slide="2"></button>
 
             </div>
 
@@ -184,7 +242,7 @@
                     </div>
 
 
-                    <div class="stat-card">
+                    <!--div class="stat-card">
                         <i data-lucide="map-pin"></i>
                         <strong>BR</strong>
 
@@ -193,14 +251,14 @@
                             em todo o Brasil
                         </span>
 
-                    </div>
+                    </div-->
 
                 </div>
 
 
                 <!-- DEPOIMENTOS DOS CLIENTES -->
 
-                <div class="reviews-header">
+                <!--div class="reviews-header">
 
                     <div class="section-eyebrow">
                         <span class="eyebrow-line"></span>
@@ -223,291 +281,9 @@
                         uso.
                     </p>
 
-                </div>
+                </div-->
 
-                <!-- CARROSSEL -->
-
-                <div class="reviews-carousel">
-
-                    <div class="reviews-track">
-
-
-                        <!-- REVIEW 1 -->
-
-                        <article class="review-card">
-
-                            <div class="stars">
-                                ★★★★★
-                            </div>
-
-                            <p class="review-text">
-                                "Eu tinha um problema de ferrugem na minha água
-                                e a MEU FILTRO resolveu tudo. A melhor aquisição
-                                que fiz em 2022. Estou muito satisfeito!"
-                            </p>
-
-                            <div class="review-footer">
-
-                                <div class="review-avatar">
-                                    W
-                                </div>
-
-                                <div>
-                                    <div class="review-author">
-                                        Wallacy Oliveira
-                                    </div>
-
-                                    <div class="review-source">
-                                        Avaliação no Google
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- REVIEW 2 -->
-
-                        <article class="review-card">
-
-                            <div class="stars">
-                                ★★★★★
-                            </div>
-
-                            <p class="review-text">
-                                "Ótimo atendimento, consegui esclarecer todas
-                                as dúvidas e o produto foi ajustado de acordo
-                                com a minha necessidade. Ótimo produto e suporte!"
-                            </p>
-
-                            <div class="review-footer">
-
-                                <div class="review-avatar">
-                                    M
-                                </div>
-
-                                <div>
-                                    <div class="review-author">
-                                        Marcio Paschuini
-                                    </div>
-
-                                    <div class="review-source">
-                                        Avaliação no Google
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- REVIEW 3 -->
-
-                        <article class="review-card">
-
-                            <div class="stars">
-                                ★★★★★
-                            </div>
-
-                            <p class="review-text">
-                                "Instalei o filtro porque minha água era
-                                ferruginosa. Fui muito bem atendida e minha
-                                água está ótima! Super recomendo!"
-                            </p>
-
-                            <div class="review-footer">
-
-                                <div class="review-avatar">
-                                    V
-                                </div>
-
-                                <div>
-                                    <div class="review-author">
-                                        Viviane de Freitas
-                                    </div>
-
-                                    <div class="review-source">
-                                        Avaliação no Google
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- REVIEW 4 -->
-
-                        <article class="review-card">
-
-                            <div class="stars">
-                                ★★★★★
-                            </div>
-
-                            <p class="review-text">
-                                "Ótimo atendimento. Fiquei muito satisfeito
-                                com o produto, com a orientação técnica e
-                                com o atendimento pós-venda."
-                            </p>
-
-                            <div class="review-footer">
-
-                                <div class="review-avatar">
-                                    G
-                                </div>
-
-                                <div>
-                                    <div class="review-author">
-                                        Gilson Menezes
-                                    </div>
-
-                                    <div class="review-source">
-                                        Avaliação no Google
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- DUPLICAÇÃO -->
-
-                        <article class="review-card">
-
-                            <div class="stars">
-                                ★★★★★
-                            </div>
-
-                            <p class="review-text">
-                                "Eu tinha um problema de ferrugem na minha água
-                                e a MEU FILTRO resolveu tudo. A melhor aquisição
-                                que fiz em 2022. Estou muito satisfeito!"
-                            </p>
-
-                            <div class="review-footer">
-
-                                <div class="review-avatar">
-                                    W
-                                </div>
-
-                                <div>
-                                    <div class="review-author">
-                                        Wallacy Oliveira
-                                    </div>
-
-                                    <div class="review-source">
-                                        Avaliação no Google
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </article>
-
-
-                        <article class="review-card">
-
-                            <div class="stars">
-                                ★★★★★
-                            </div>
-
-                            <p class="review-text">
-                                "Ótimo atendimento, consegui esclarecer todas
-                                as dúvidas e o produto foi ajustado de acordo
-                                com a minha necessidade. Ótimo produto e suporte!"
-                            </p>
-
-                            <div class="review-footer">
-
-                                <div class="review-avatar">
-                                    M
-                                </div>
-
-                                <div>
-                                    <div class="review-author">
-                                        Marcio Paschuini
-                                    </div>
-
-                                    <div class="review-source">
-                                        Avaliação no Google
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </article>
-
-
-                        <article class="review-card">
-
-                            <div class="stars">
-                                ★★★★★
-                            </div>
-
-                            <p class="review-text">
-                                "Instalei o filtro porque minha água era
-                                ferruginosa. Fui muito bem atendida e minha
-                                água está ótima! Super recomendo!"
-                            </p>
-
-                            <div class="review-footer">
-
-                                <div class="review-avatar">
-                                    V
-                                </div>
-
-                                <div>
-                                    <div class="review-author">
-                                        Viviane de Freitas
-                                    </div>
-
-                                    <div class="review-source">
-                                        Avaliação no Google
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </article>
-
-
-                        <article class="review-card">
-
-                            <div class="stars">
-                                ★★★★★
-                            </div>
-
-                            <p class="review-text">
-                                "Ótimo atendimento. Fiquei muito satisfeito
-                                com o produto, com a orientação técnica e
-                                com o atendimento pós-venda."
-                            </p>
-
-                            <div class="review-footer">
-
-                                <div class="review-avatar">
-                                    G
-                                </div>
-
-                                <div>
-                                    <div class="review-author">
-                                        Gilson Menezes
-                                    </div>
-
-                                    <div class="review-source">
-                                        Avaliação no Google
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-                </div>
+                <!-- CARROSSEL INUTILIZADO-->
 
             </div>
 
