@@ -686,3 +686,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+/* HIDROMETRO */
+
+const contador = document.getElementById("contador-hidro");
+
+const valorInicial = 1000000;
+const dataInicial = new Date("2026-01-01T00:00:00");
+
+function atualizarContador() {
+    const agora = new Date();
+
+    const segundosPassados =
+        (agora - dataInicial) / 1000;
+
+    const taxa =
+        agora.getHours() < 18
+            ? 0.8  // m³ por segundo
+            : 0.2;
+
+    const valorAtual =
+        valorInicial + segundosPassados * taxa;
+
+    contador.textContent =
+        Math.floor(valorAtual).toLocaleString("pt-BR") + " m³";
+}
+
+atualizarContador();
+setInterval(atualizarContador, 1000);
+
+const ponteiro = document.querySelector(".meio");
+
+let angulo = 0;
+
+function girarPonteiro() {
+
+    const agora = new Date();
+
+    const taxa = agora.getHours() < 16 ? 20 : 10;
+
+    angulo += taxa;
+
+    if (angulo >= 360) {
+        angulo -= 360;
+    }
+
+    ponteiro.style.transform = `rotate(${angulo}deg)`;
+
+    requestAnimationFrame(girarPonteiro);
+}
+
+requestAnimationFrame(girarPonteiro);

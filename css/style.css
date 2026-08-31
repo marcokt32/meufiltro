@@ -251,6 +251,60 @@ button {
     background-color: var(--text);
 }
 
+/* WAVES*/
+
+.reviews-section {
+    position: relative;
+}
+
+.waves {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    top: -12rem;
+}
+
+/* HIDROMETRO */
+
+.hidro-section {
+    background: rgba(255, 255, 255, 0);
+    min-height: 9rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    padding-left: 10rem;
+    z-index: 2
+}
+
+.hidro-card {
+    padding: .5rem;
+    border-radius: .5rem;
+    box-shadow: 11px 13px 18px 2px rgba(0, 0, 0, 0.54);
+    -webkit-box-shadow: 11px 13px 18px 2px rgba(0, 0, 0, 0.54);
+    background: linear-gradient(135deg, #99a6ad 5%, #ffffff 20%, #ebf9ff 70%);
+}
+
+.hidro-card span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.hidro-card p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hidro,
+.meio {
+    left: 1rem;
+    top: .5rem;
+    position: absolute;
+    height: 8rem;
+}
+
 
 /* =========================================================
    HERO
@@ -289,9 +343,9 @@ button {
 
     background:
         linear-gradient(-90deg,
-            rgba(13, 59, 110, 1),
+            rgba(13, 59, 110, .5),
             rgba(13, 59, 110, 0),
-            rgba(13, 59, 110, 1));
+            rgba(13, 59, 110, .5));
 
     z-index: 1;
 }
@@ -299,13 +353,14 @@ button {
 /* CONTEÚDO */
 
 .hero-content {
+    margin-top: 2rem;
+    margin-left: 5rem;
+
     height: 80%;
 
     position: relative;
 
     z-index: 2;
-
-    max-width: 700px;
 
     color: white;
 }
@@ -497,8 +552,6 @@ button {
 .hero h1 {
     text-align: left;
 
-    margin-bottom: 24px;
-
     color: var(--white);
 
     line-height: 0.9;
@@ -508,11 +561,11 @@ button {
     font-size: 3rem;
 
     letter-spacing: -0.05em;
-
-    margin-bottom: 1.5rem;
 }
 
 .hero h1 strong {
+    height: 6rem;
+
     margin-top: 1rem;
 
     display: block;
@@ -735,13 +788,13 @@ button {
 
 .stat-card {
     width: 100px;
-    min-height: 90px;
+    min-height: 80px;
 
     background: #ffffff;
 
     border-radius: 18px;
 
-    padding: .5rem 1rem;
+    padding: .5rem;
 
     display: flex;
     flex-direction: column;
@@ -750,8 +803,6 @@ button {
     justify-content: center;
 
     text-align: center;
-
-    min-height: 150px;
 
     border: 1px solid rgba(13, 90, 158, 0.08);
 
@@ -785,7 +836,7 @@ button {
     color: #4A4A6A;
     text-align: left;
 
-    font-size: 1rem;
+    font-size: .8rem;
     line-height: 1;
 }
 
@@ -1125,8 +1176,8 @@ button {
 
 section {
     background-image: linear-gradient(180deg,
-            var(--primary) 0%,
-            var(--light) 3%,
+            transparent 0%,
+            transparent 3%,
             var(--light) 80%,
             var(--secondary) 100%);
     scroll-margin-top: 1.5rem;
@@ -1370,7 +1421,7 @@ section {
 
 .benefit-card-reverse .benefit-number {
     left: auto;
-    right: -22px;
+    right: 20px;
 }
 
 
@@ -1454,7 +1505,7 @@ section {
 .resource-header h3 {
     color: #0D5A9E;
 
-    font-size: 34px;
+    font-size: 1.5rem;
 
     line-height: 1.2;
 
@@ -2744,7 +2795,7 @@ section {
     display: grid;
     grid-template-columns: 42% 58%;
 
-    min-height: 300px;
+    height: 300px;
 
     background: #fff;
     border-radius: 20px;
@@ -2967,6 +3018,8 @@ section {
         scroll-snap-stop: always;
 
         border-radius: 18px;
+
+        height: fit-content;
     }
 
 
@@ -3032,6 +3085,15 @@ section {
 
     .hero {
         height: 66vh;
+    }
+
+    .waves {
+        top: 0;
+    }
+
+    .hidro-section {
+        justify-content: center;
+        padding-left: 9rem;
     }
 
 }
