@@ -737,3 +737,48 @@ function girarPonteiro() {
 }
 
 requestAnimationFrame(girarPonteiro);
+
+
+/* ENVIO DE EMAIL */
+
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    const destinatario = "contato@seudominio.com.br";
+
+    const assunto = subject
+        ? subject
+        : `Contato pelo site - ${name}`;
+
+    const corpo =
+        `Olá,
+
+Recebemos um novo contato através do site Meu Filtro.
+
+Nome: ${name}
+E-mail: ${email}
+WhatsApp: ${phone}
+
+Assunto: ${subject}
+
+Mensagem:
+${message}
+
+--------------------------------
+Mensagem enviada pelo site Meu Filtro`;
+
+    const mailto =
+        `mailto:${destinatario}` +
+        `?subject=${encodeURIComponent(assunto)}` +
+        `&body=${encodeURIComponent(corpo)}`;
+
+    window.location.href = mailto;
+
+});
