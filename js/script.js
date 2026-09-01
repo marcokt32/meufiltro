@@ -86,7 +86,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     5521999999999
 */
 
-const whatsappNumber = "5500000000000";
+const whatsappNumber = "552121439026";
 
 
 /*
@@ -94,7 +94,7 @@ const whatsappNumber = "5500000000000";
 */
 
 const whatsappMessage =
-    "Olá! Gostaria de saber mais sobre o Meu Filtro.";
+    "Oi encontrei o site da Meu Filtro.\nQuero uma solução para o meu problema com água de poço!";
 
 
 /*
