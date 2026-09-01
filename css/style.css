@@ -261,15 +261,17 @@ button {
     z-index: -1;
     position: absolute;
     width: 100%;
-    top: -12rem;
+    top: -20rem;
 }
 
 /* HIDROMETRO */
 
 .hidro-section {
+    position: absolute;
+    top: -10rem;
+    right: 4rem;
     background: rgba(255, 255, 255, 0);
     min-height: 9rem;
-    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -3092,8 +3094,11 @@ section {
     }
 
     .hidro-section {
+        position: relative;
         justify-content: center;
         padding-left: 9rem;
+        top: inherit;
+        right: inherit;
     }
 
 }
