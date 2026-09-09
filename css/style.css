@@ -256,6 +256,10 @@ button {
     background-color: var(--text);
 }
 
+.page-about a {
+    color: var(--text);
+}
+
 /* WAVES*/
 
 .reviews-section {
@@ -680,7 +684,8 @@ button {
 .benefits-header p,
 .reviews-header p,
 .section-header p,
-.contact-header p {
+.contact-header p,
+.cta-header p {
     font-weight: 500;
 
     max-width: 36rem;
@@ -781,7 +786,9 @@ button {
 .experience-header,
 .resource-header,
 .reviews-header,
-.benefits-header {
+.benefits-header,
+.faq-header,
+.cta-header {
     text-align: center;
     margin: 0 auto 1rem;
 }
@@ -1210,7 +1217,8 @@ section {
 .resource-header h2,
 .benefits-header h2,
 .reviews-header h2,
-.contact-header h2 {
+.contact-header h2,
+.cta-header h2 {
     margin-bottom: 18px;
 
     color: var(--section-title);
@@ -1228,6 +1236,10 @@ section {
 .resource-header h2 strong,
 .benefits-header h2 strong {
     color: #F47C20;
+}
+
+.cta-header h2 {
+    color: white;
 }
 
 /* =========================================================
@@ -1433,38 +1445,6 @@ section {
 .benefit-card-reverse .benefit-number {
     left: auto;
     right: 20px;
-}
-
-
-/* =========================================================
-   SOBRE
-========================================================= */
-
-.about {
-    background: var(--white);
-}
-
-.about-content {
-    max-width: 560px;
-}
-
-.about-content p {
-    margin-bottom: 18px;
-
-    color: var(--text-light);
-}
-
-.about-content .button {
-    margin-top: 15px;
-}
-
-.about-image img {
-    width: 100%;
-    max-width: 540px;
-
-    margin: auto;
-
-    border-radius: var(--radius);
 }
 
 /* =========================
@@ -1748,7 +1728,7 @@ section {
 
 
 /* =========================
-   CTA
+   RECURSOS
 ========================= */
 
 .resource-cta {
@@ -1833,42 +1813,34 @@ section {
 ========================================================= */
 
 .cta {
-    padding: 75px 0;
-
-    background:
-        linear-gradient(135deg,
-            var(--primary-dark),
-            var(--primary));
-
+    background: url("../assets/water-ripples.jpg") center / cover no-repeat;
     color: var(--white);
 }
 
-.cta-container {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 40px;
-}
-
-.cta-content {
-    max-width: 720px;
-}
+/*.cta-container {
+    
+}*/
 
 .cta .section-label {
     color: rgba(255, 255, 255, 0.75);
 }
 
-.cta h2 {
-    margin-bottom: 12px;
-
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    line-height: 1.15;
-}
-
 .cta p {
     color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-list {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-list span {
+    display: flex;
+    gap: .5rem;
 }
 
 /* =========================================================
@@ -2317,10 +2289,6 @@ section {
 
 /* CARROSSEL ANTES X DEPOIS */
 
-/* =========================
-   DESKTOP
-========================= */
-
 .before-after-carousel {
     position: relative;
 }
@@ -2353,6 +2321,191 @@ section {
 
 .carousel-btn {
     display: none;
+}
+
+/* SEÇÃO SOBRE */
+
+.about {
+    padding-top: 70px;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-gallery {
+    position: relative;
+    height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.about-slide {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    transition: .6s;
+}
+
+.about-slide.active {
+    opacity: 1;
+}
+
+.about-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 8px;
+}
+
+.about-dots span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .4);
+}
+
+.about-dots span.active {
+    background: white;
+}
+
+.about-list {
+    padding: 1rem;
+}
+
+/* ========================================
+   FAQ
+======================================== */
+
+.faq {
+    padding: 100px 0;
+    background: #f8fbff;
+}
+
+.faq-header h2 {
+    font-size: 3rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.faq-header p {
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: #fff;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(13, 90, 158, .12);
+
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.faq-item:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.faq-question {
+    width: 100%;
+
+    border: none;
+    background: transparent;
+
+    padding: 24px 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    color: var(--primary-dark);
+}
+
+.faq-icon {
+    font-size: 1.8rem;
+    color: var(--secondary);
+
+    transition: .3s;
+}
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+        max-height .35s ease,
+        padding .35s ease;
+
+    padding: 0 28px;
+}
+
+.faq-answer p {
+    color: var(--text);
+    line-height: 1.8;
+
+    padding-bottom: 24px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+@media(max-width:768px) {
+
+    .faq {
+        padding: 70px 0;
+    }
+
+    .faq-header h2 {
+        font-size: 2rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 20px;
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+    }
 }
 
 
@@ -2580,10 +2733,6 @@ section {
         flex-direction: column;
 
         text-align: center;
-    }
-
-    .cta-content {
-        max-width: 700px;
     }
 
     .footer-container {
@@ -2949,7 +3098,7 @@ section {
 .benefit-content p {
     color: #4A4A6A;
 
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1.5;
 
     margin-bottom: 8px;
@@ -3090,7 +3239,7 @@ section {
     }
 
     .benefit-content p {
-        font-size: 13px;
+        font-size: 1rem;
         line-height: 1.45;
 
         margin-bottom: 7px;
@@ -3131,5 +3280,10 @@ section {
         display: flex;
         flex-direction: column;
     }
+
+    .cta-list {
+    flex-direction: column;
+    align-items: center;
+}
 
 }
