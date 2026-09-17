@@ -3297,6 +3297,7 @@ section {
 ========================================================= */
 
 .loja-section {
+    background: var(--background);
     padding: 80px 0;
     background: #ffffff;
 }
